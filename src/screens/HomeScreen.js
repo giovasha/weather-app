@@ -1,20 +1,16 @@
 import React, { useState, useEffect, } from "react";
 import { View, Text, StyleSheet, ScrollView, FlatList, TouchableOpacity, Button } from "react-native";
 import SearchBar from "../components/SearchBar";
-import linkUse from '../components/linkUse'
 import link from "../links/link"
-import Constants from "expo-constants";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 
 const HomeScreen = () =>{
   const [term, setTerm] = useState('')
-  const [results, setResults] = useState();
   const [errorMessage, setErrorMessage] = useState("");
   const [data, setApiData] = useState ('272')
   const [status, setStatus] = useState(null)
   const [city, setCity] = useState ()
-  const [name, setName] = useState()
   const getWholeAndDecimal = value => {
     const [whole, decimal] = String(value).split('.');
     return [Number(whole)];
